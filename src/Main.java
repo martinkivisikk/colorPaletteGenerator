@@ -30,7 +30,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         //Eeldame, et sisend on korrektne.
         String punane = JOptionPane.showInputDialog(null, "Sisesta punase väärtus (0-255) ", "Andmete sisestamine",
                 JOptionPane.QUESTION_MESSAGE);
@@ -57,6 +57,8 @@ public class Main {
             System.out.println(v);
         }
         System.out.println();
+
+        Muster.salvesta(Muster.looSuprematism(palett.getHarmoonia(), 500, 500), "pildike.png");
 
         //Teeme randomiga ka
         testimine();

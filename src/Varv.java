@@ -28,7 +28,7 @@ public class Varv {
      * @param r punase väärtus 0-255
      * @param g rohelise väärtus 0-255
      * @param b sinise väärtus 0-255
-     * @return
+     * @return vastav hsl massiiv
      */
     public double[] rgbToHsl(int r, int g, int b) {
         double mm = Math.max(Math.max(r, g), b); //abinumber
@@ -49,9 +49,9 @@ public class Varv {
 
         //viimaks h ehk toon (kraadides värviringil)
         if (g >= b) {
-            hsl[0] = Math.acos((r - g / 2 - b / 2) / Math.sqrt(r * r + g * g + b * b + r * g + r * b + g * b));
+            hsl[0] = Math.acos((r - g / 2.0 - b / 2.0) / Math.sqrt(r * r + g * g + b * b + r * g + r * b + g * b));
         } else {
-            hsl[0] = 360 - Math.acos((r - g / 2 - b / 2) / Math.sqrt(r * r + g * g + b * b + r * g + r * b + g * b));
+            hsl[0] = 360 - Math.acos((r - g / 2.0 - b / 2.0) / Math.sqrt(r * r + g * g + b * b + r * g + r * b + g * b));
         }
 
         return hsl;
@@ -59,11 +59,10 @@ public class Varv {
 
     /**
      * rgb on palju loomulikum arvutitele, kuna kirjeldab minimaalse infoga kõiki värve, mida ühele pikslile anda saab
-     *
      * @param h toon (hue) 0 - 360
      * @param s küllastus (saturation) 0-1
      * @param l heledus (lightness) 0-1
-     * @return
+     * @return vastav rgb massiiv
      */
     public int[] hslToRgb(double h, double s, double l) {
         int[] rgb = new int[3];
@@ -123,12 +122,7 @@ public class Varv {
     public void setB(int b) {
         this.b = b;
     }
-    
-    public int[] getRGB() {
-        int[] rgb = {r,g,b};
-        return rgb;
-    }
- 
+
     @Override
     public String toString() {
         return "Varv{" +
