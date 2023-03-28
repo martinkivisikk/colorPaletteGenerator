@@ -49,8 +49,10 @@ public class Main {
         Palett palett = new Palett(varv);
 
         //Testime meetodite tööd
-        h.genereeriAnaloogsedVärvid(varv, palett);
-        h.genereeriKomplementaarneVärv(varv, palett);
+        //h.genereeriAnaloogsedVärvid(varv, palett);
+        //h.genereeriKomplementaarneVärv(varv, palett);
+        h.genereeriNelinurknePalett(varv, palett);
+        System.out.println("Kasutaja sisestatud värvi põhjal:");
         for (Varv v : palett.getHarmoonia()) {
             System.out.println(v);
         }

@@ -5,6 +5,7 @@
 public class Harmoonia {
     /**
      * Meetod, mis lisab sisendvärvi vastandvärvi olemasolevasse värvipaletti.
+     *
      * @param v Värv, mille vastandvärvi leiame
      * @param p Olemasolev värvipalett, kuhu vastandvärv lisatakse
      */
@@ -15,6 +16,7 @@ public class Harmoonia {
 
     /**
      * Meetod, mis lisab värvipaletti 2 analoogset värvi.
+     *
      * @param v Värv, millele genereerime analoogseid värve
      * @param p Olemasolev värvipalett, kuhu analoogsed värvid lisatakse.
      */
@@ -36,7 +38,27 @@ public class Harmoonia {
     }
 
     public void genereeriKolmnurknePalett(Varv v, Palett p) {
+        double[] sisendHSL = v.rgbToHsl(v.getR(), v.getG(), v.getB());
+        double suvalineToon = sisendHSL[0];
+        for (int i = 0; i < 2; i++) {
+            suvalineToon += 120;
+            if (suvalineToon > 360) suvalineToon = suvalineToon % 360;
+            int[] uusRGB = v.hslToRgb(suvalineToon, sisendHSL[1], sisendHSL[2]);
+            Varv uusVärv = new Varv(uusRGB[0], uusRGB[1], uusRGB[2]);
+            p.lisaVarv(uusVärv);
+        }
+    }
 
+    public void genereeriNelinurknePalett(Varv v, Palett p) {
+        double[] sisendHSL = v.rgbToHsl(v.getR(), v.getG(), v.getB());
+        double suvalineToon = sisendHSL[0];
+        for (int i = 0; i < 3; i++) {
+            suvalineToon += 90;
+            if (suvalineToon > 360) suvalineToon = suvalineToon % 360;
+            int[] uusRGB = v.hslToRgb(suvalineToon, sisendHSL[1], sisendHSL[2]);
+            Varv uusVärv = new Varv(uusRGB[0], uusRGB[1], uusRGB[2]);
+            p.lisaVarv(uusVärv);
+        }
     }
 
 
