@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 //aitab genereerida kokkusobivaid värve. hea oleks kasutada hsl-kuju. nt komplementaarse värvi võtmisel võtad
 //teisel pool ringi asuva hue, sama saturationi ja sama lightnessi ning lisad igale väärtusele natuke müra
 //ei tasu genereerida liiga sarnaseid värve. äkki võiks võtta mõnele funktsioonile kaks argumenti, üks põhivärv,
@@ -10,7 +8,7 @@ public class Harmoonia {
      * @param v Värv, mille vastandvärvi leiame
      * @param p Olemasolev värvipalett, kuhu vastandvärv lisatakse
      */
-    public void genereeriKomplementaarneVärv(Varv v, Pallett p) {
+    public void genereeriKomplementaarneVärv(Varv v, Palett p) {
         Varv komplementaarneVärv = new Varv(255 - v.getR(), 255 - v.getG(), 255 - v.getB());
         p.lisaVarv(komplementaarneVärv);
     }
@@ -20,7 +18,7 @@ public class Harmoonia {
      * @param v Värv, millele genereerime analoogseid värve
      * @param p Olemasolev värvipalett, kuhu analoogsed värvid lisatakse.
      */
-    public void genereeriAnaloogsedVärvid(Varv v, Pallett p) {
+    public void genereeriAnaloogsedVärvid(Varv v, Palett p) {
         double[] sisendHSL = v.rgbToHsl(v.getR(), v.getG(), v.getB());
         //System.out.println(sisendHSL[0]);
         for (int i = 0; i < 2; i++) {
@@ -35,6 +33,10 @@ public class Harmoonia {
             Varv uusVärv = new Varv(uusRGB[0], uusRGB[1], uusRGB[2]);
             p.lisaVarv(uusVärv);
         }
+    }
+
+    public void genereeriKolmnurknePalett(Varv v, Palett p) {
+
     }
 
 

@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 //klass, mis hoiab värviharmooniat, ehk mingit hulka värve, mis sobivad kokku
-public class Pallett {
+public class Palett {
     private List<Varv> harmoonia;
 
     //konstruktor, mis võtab argumendisks harmoonia põhivärvi ning lisab selle järjendisse
-    public Pallett(Varv a) {
+    public Palett(Varv a) {
         this.harmoonia = new ArrayList<>();
         harmoonia.add(a);
     }

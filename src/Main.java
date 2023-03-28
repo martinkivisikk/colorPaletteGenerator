@@ -3,26 +3,26 @@ import java.util.ArrayList;
 
 public class Main {
     public static void testimine() {
-        System.out.println("Loon 3 suvalist palletti:");
+        System.out.println("Loon 3 suvalist paletti:");
         Harmoonia h = new Harmoonia();
-        ArrayList<Pallett> palletid = new ArrayList<>();
-        //3 suvalise algvärviga palletti
+        ArrayList<Palett> paletid = new ArrayList<>();
+        //3 suvalise algvärviga paletti
         for (int i = 0; i < 3; i++) {
             int randomR = (int) (Math.random() * 255);
             int randomG = (int) (Math.random() * 255);
             int randomB = (int) (Math.random() * 255);
             Varv randomVarv = new Varv(randomR, randomG, randomB);
-            Pallett p = new Pallett(randomVarv);
-            palletid.add(p);
+            Palett p = new Palett(randomVarv);
+            paletid.add(p);
         }
 
         int i = 1;
-        for (Pallett pallett : palletid) {
-            Varv varv = pallett.getHarmoonia().get(0);
-            h.genereeriKomplementaarneVärv(varv, pallett);
-            h.genereeriAnaloogsedVärvid(varv, pallett);
-            System.out.println(i++ + ". värvipallett");
-            for (Varv v : pallett.getHarmoonia()) {
+        for (Palett palett : paletid) {
+            Varv varv = palett.getHarmoonia().get(0);
+            h.genereeriKomplementaarneVärv(varv, palett);
+            h.genereeriAnaloogsedVärvid(varv, palett);
+            System.out.println(i++ + ". värvipalett");
+            for (Varv v : palett.getHarmoonia()) {
                 System.out.println(v);
             }
             System.out.println();
@@ -46,12 +46,12 @@ public class Main {
         //Loome isendid
         Harmoonia h = new Harmoonia();
         Varv varv = new Varv(r, g, b);
-        Pallett pallett = new Pallett(varv);
+        Palett palett = new Palett(varv);
 
         //Testime meetodite tööd
-        h.genereeriAnaloogsedVärvid(varv, pallett);
-        h.genereeriKomplementaarneVärv(varv, pallett);
-        for (Varv v : pallett.getHarmoonia()) {
+        h.genereeriAnaloogsedVärvid(varv, palett);
+        h.genereeriKomplementaarneVärv(varv, palett);
+        for (Varv v : palett.getHarmoonia()) {
             System.out.println(v);
         }
         System.out.println();
