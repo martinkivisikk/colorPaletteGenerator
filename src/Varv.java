@@ -123,7 +123,12 @@ public class Varv {
     public void setB(int b) {
         this.b = b;
     }
-
+    
+    public int[] getRGB() {
+        int[] rgb = {r,g,b};
+        return rgb;
+    }
+ 
     @Override
     public String toString() {
         return "Varv{" +
