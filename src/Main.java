@@ -30,7 +30,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         //Eeldame, et sisend on korrektne.
         String punane = JOptionPane.showInputDialog(null, "Sisesta punase väärtus (0-255) ", "Andmete sisestamine",
                 JOptionPane.QUESTION_MESSAGE);
@@ -49,8 +49,8 @@ public class Main {
         Palett palett = new Palett(varv);
 
         //Testime meetodite tööd
-        //h.genereeriAnaloogsedVärvid(varv, palett);
-        //h.genereeriKomplementaarneVärv(varv, palett);
+        h.genereeriAnaloogsedVärvid(varv, palett);
+        h.genereeriKomplementaarneVärv(varv, palett);
         h.genereeriNelinurknePalett(varv, palett);
         System.out.println("Kasutaja sisestatud värvi põhjal:");
         for (Varv v : palett.getHarmoonia()) {

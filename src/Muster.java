@@ -10,7 +10,7 @@ import java.util.List;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
-//kasutab Java EPI klasse, mis lasevad luua maatriksitest pilte.
+//kasutab Java API klasse, mis lasevad luua maatriksitest pilte.
 //maatriksid olgu kahemõõtmelised, igale valitud harmoonilisele värvile vastaku näiteks üks täisarv.
 //vt. programmeerimine 2 pilditöötluse abiklassi.
 //see, kuidas ja mis kujundeid maatriksisse luua, on veel toores idee. äkki fraktaalid? siis saaks rekursiooni kasutada.

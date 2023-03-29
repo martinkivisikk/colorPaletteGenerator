@@ -1,7 +1,7 @@
 //aitab genereerida kokkusobivaid värve. hea oleks kasutada hsl-kuju. nt komplementaarse värvi võtmisel võtad
 //teisel pool ringi asuva hue, sama saturationi ja sama lightnessi ning lisad igale väärtusele natuke müra
 //ei tasu genereerida liiga sarnaseid värve. äkki võiks võtta mõnele funktsioonile kaks argumenti, üks põhivärv,
-//millele harmoonilist värvi leida, ning teine värv, millest see võiks märgatavaöt erinev olla
+//millele harmoonilist värvi leida, ning teine värv, millest see võiks märgatavalt erinev olla
 public class Harmoonia {
     /**
      * Meetod, mis lisab sisendvärvi vastandvärvi olemasolevasse värvipaletti.
@@ -41,7 +41,9 @@ public class Harmoonia {
         double[] sisendHSL = v.rgbToHsl(v.getR(), v.getG(), v.getB());
         double suvalineToon = sisendHSL[0];
         for (int i = 0; i < 2; i++) {
+            //liidame 120 kraadi, et lõpuks 3 värvi moodustaksid värviringil omavahel kolmnurga
             suvalineToon += 120;
+            //kui lähme "üle ääre", siis jätkame nullist
             if (suvalineToon > 360) suvalineToon = suvalineToon % 360;
             int[] uusRGB = v.hslToRgb(suvalineToon, sisendHSL[1], sisendHSL[2]);
             Varv uusVärv = new Varv(uusRGB[0], uusRGB[1], uusRGB[2]);
@@ -53,7 +55,9 @@ public class Harmoonia {
         double[] sisendHSL = v.rgbToHsl(v.getR(), v.getG(), v.getB());
         double suvalineToon = sisendHSL[0];
         for (int i = 0; i < 3; i++) {
+            //lõpuks moodustub nelinurk
             suvalineToon += 90;
+            //kui lähme "üle ääre"
             if (suvalineToon > 360) suvalineToon = suvalineToon % 360;
             int[] uusRGB = v.hslToRgb(suvalineToon, sisendHSL[1], sisendHSL[2]);
             Varv uusVärv = new Varv(uusRGB[0], uusRGB[1], uusRGB[2]);
